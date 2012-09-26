@@ -16,3 +16,13 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# OS generated files #
+######################
+.DS_Store
+.idea
+/**/*.iml
+*.iml
+
+
+app/models/trade/.DS_Store
