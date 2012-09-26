@@ -1,4 +1,7 @@
 class User
+
+  @@users = Array.new
+
   attr_accessor :name, :credits, :items
 
   def initialize(name)
@@ -57,5 +60,13 @@ class User
 
   def to_s
     "User #{self.name}: #{self.credits} credits, #{self.items.length} items, #{active_items.length} items to sell.\n"
+  end
+
+  def save
+    @@users.push(self)
+  end
+
+  def self.by_name(username)
+    @@users.detect { |user| user.name == username}
   end
 end
