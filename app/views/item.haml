@@ -1,12 +1,15 @@
-%h1 Purchasable items
+%h4 Purchasable items
 
-%ul
-  - for user in users
+- for user in users
+  -unless user.name == session[:name]
+    User
+    %a{:href => "/user/#{user.name}"} #{user.name}s
+    items:
+  %ul
     - for item in user.active_items
       -unless item.owner.name == session[:name]
         %p
-          #{item.name} - #{item.price} -
-          %a{:href => "/user/#{item.owner.name}"} #{item.owner.name} -
+          #{item.name} - #{item.price} credits -
           %a{:href => "/item/#{item.id}/buy"} Buy this item
 
 %hr

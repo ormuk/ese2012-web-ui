@@ -1,12 +1,18 @@
 %p Item #{item.name}
 %p Owner: #{item.owner.name}
-%p Price: #{item.price}
-- if item.state == :active
-  %p
-    This item is purchasable.
-    %a{:href => "/item/#{item.id}/buy"} Buy item #{item.name}
-- else
-  %p This item is not purchasable at the moment.
+%p Price: #{item.price} credits
+- if item.owner.name != session[:name]
+  - if item.state == :active
+    %p
+      This item is purchasable.
+      %a{:href => "/item/#{item.id}/buy"} Buy this item.
+  - else
+    %p This item is not purchasable at the moment.
+-else
+  - if item.state == :inactive
+    %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
+  -else
+    This item is purchasable by other users.
 
 %p
   %a{:href => "/user/#{session[:name]}"} My items

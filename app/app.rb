@@ -26,20 +26,20 @@ class App < Sinatra::Base
 
   configure :development do
     ese = User.new('ese')
-    ese.add_item(Item.new('script',5))
-    ese.add_item(Item.new('beamer', 650))
+    ese.add_item(Item.new('Script',5))
+    ese.add_item(Item.new('Beamer', 650))
     ese.save
 
     suti = User.new('suti')
-    suti.add_item(Item.new('macbook pro',5000))
-    suti.add_item(Item.new('banane', 1))
-    suti.add_item(Item.new('stuhl', 25))
+    suti.add_item(Item.new('MacBook Pro',5000))
+    suti.add_item(Item.new('Banane', 1))
+    suti.add_item(Item.new('Stuhl', 25))
     suti.save
 
     flo = User.new('flo')
-    flo.add_item(Item.new('macbook air',2500))
-    flo.add_item(Item.new('apfel', 1))
-    flo.add_item(Item.new('tisch', 156))
+    flo.add_item(Item.new('MacBook Air',2500))
+    flo.add_item(Item.new('Apfel', 1))
+    flo.add_item(Item.new('Tisch', 156))
     flo.save
 
     Item.all.each{ |item| item.state = :active}

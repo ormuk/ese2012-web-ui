@@ -1,8 +1,8 @@
-%h1 Users
-%a{:href => "/logout"} Logout
+%h4 Users
 %ul
   - for user in User.all
-    %a{:href => "/user/#{user.name}"} #{user.name}
+    %p
+      %a{:href => "/user/#{user.name}"} #{user.name}
 
 %hr
 %a{:href => "/user/#{session[:name]}"} My items

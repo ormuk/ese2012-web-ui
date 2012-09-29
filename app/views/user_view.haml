@@ -3,13 +3,14 @@
   - for item in user.list_items
     %p
       %a{:href => "/item/#{item.id}"} #{item.name}
-      \- #{item.price} -
+      \- #{item.price} credits -
       %a{:href => "/item/#{item.id}/buy"} Buy this item.
 -else
+  Your credits: #{user.credits}
   - for item in user.list_items
     %p
       %a{:href => "/item/#{item.id}"} #{item.name}
-      \- #{item.price} -
+      \- #{item.price} credits -
       - if item.state == :inactive
         %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
       -else

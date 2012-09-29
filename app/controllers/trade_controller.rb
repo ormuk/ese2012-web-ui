@@ -14,7 +14,7 @@ class TradeController < Sinatra::Application
   end
 
   get "/item/:id" do
-    haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i)}
+    haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i), :user => User.by_name(params[:name])}
   end
 
   get "/item/:id/sell" do
