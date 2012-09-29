@@ -4,9 +4,11 @@
 - if item.state == :active
   %p
     This item is purchasable.
-    %a{:href => "/item/#{item.id}"} Buy item #{item.name}
+    %a{:href => "/item/#{item.id}/buy"} Buy item #{item.name}
 - else
   %p This item is not purchasable at the moment.
 
 %p
+  %a{:href => "/item"} Items
+  %a{:href => "/user"} Users
   %a{:href => "/logout"} Logout

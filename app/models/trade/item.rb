@@ -21,4 +21,8 @@ class Item
     @@items.detect {|item| item.id == id}
   end
 
+  def self.all
+    @@items
+  end
+
 end

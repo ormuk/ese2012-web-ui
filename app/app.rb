@@ -28,7 +28,6 @@ class App < Sinatra::Base
     ese = User.new('ese')
     ese.add_item(Item.new('script',5))
     ese.add_item(Item.new('beamer', 650))
-    ese.items[0].state = :active
     ese.save
 
     suti = User.new('suti')
@@ -42,6 +41,8 @@ class App < Sinatra::Base
     flo.add_item(Item.new('apfel', 1))
     flo.add_item(Item.new('tisch', 156))
     flo.save
+
+    Item.all.each{ |item| item.state = :active}
   end
 end
 

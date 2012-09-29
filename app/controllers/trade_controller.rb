@@ -18,6 +18,11 @@ class TradeController < Sinatra::Application
   end
 
   get "/item/:id/buy" do
-    #buy item, redirect to item details if successful
+    if User.by_name(session[:name]) == Item.by_id(params[:id].to_i).owner
+      "This is your own item!"
+    else
+      User.by_name(session[:name]).buy(Item.by_id(params[:id].to_i))
+      haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i)}
+    end
   end
 end
