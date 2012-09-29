@@ -103,4 +103,9 @@ class UserTest < Test::Unit::TestCase
     assert("#{@suti}" == "User Suti: 100 credits, 2 items, 1 items to sell.\n")
   end
 
+  def test_by_name
+    @suti.save
+    assert(User.by_name("Suti") == @suti)
+  end
+
 end
