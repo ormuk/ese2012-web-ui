@@ -2,7 +2,7 @@
 
 %ul
   - for item in user.list_items
-    %a{:href => "/#{item.name}"} #{item.name}
+    %a{:href => "/item/#{item.id}"} #{item.name}
 
 %hr
 

@@ -20,4 +20,13 @@ class ItemTest < Test::Unit::TestCase
     assert(item.to_s == "book (25) with state inactive owned by Peter")
   end
 
+  def test_by_id
+    user = User.new("Peter")
+    user.add_item(Item.new("book", 25))
+    user.add_item(Item.new("book2", 50))
+    assert(Item.by_id(user.items[0].id) == user.items[0])
+    assert(Item.by_id(user.items[1].id) == user.items[1])
+    assert(Item.by_id(user.items[0].id) != user.items[1])
+  end
+
 end
