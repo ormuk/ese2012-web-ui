@@ -1,7 +1,5 @@
 require 'haml'
 require_relative '../../app/models/trade/user'
-
-
 class LoginController < Sinatra::Application
   post "/login" do
     #login duh!?
@@ -20,7 +18,7 @@ class LoginController < Sinatra::Application
 
   get "/logout" do
     #destroy session
-    session.clear
+    session[:name] = nil
     haml :logout
   end
 end

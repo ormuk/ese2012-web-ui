@@ -69,4 +69,8 @@ class User
   def self.by_name(username)
     @@users.detect { |user| user.name == username}
   end
+
+  def self.all
+    @@users
+  end
 end

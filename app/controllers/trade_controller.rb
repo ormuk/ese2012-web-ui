@@ -1,6 +1,6 @@
 class TradeController < Sinatra::Application
   get "/" do
-    #main screen
+    redirect '/login' unless session[:name]
   end
 
   get "/item" do

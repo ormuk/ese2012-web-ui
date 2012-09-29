@@ -1,0 +1,7 @@
+%h1 Users
+%a{:href => "/logout"} Logout
+%ul
+  - for user in User.all
+    %a{:href => "/user/#{user.name}"} #{user.name}
+
+%hr

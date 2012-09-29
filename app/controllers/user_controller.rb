@@ -1,9 +1,10 @@
+require '/app/models/trade/user.rb'
 class UserController < Sinatra::Application
  get "/user" do
-   #list all users
+   haml :users
  end
 
-  get "/user/:id" do
-    #details for a user, including his items for sale and all items (if the user is looking at himself)
+  get "/user/:name" do
+    haml :user_view, :locals => { :user => User.by_name(:name)}
   end
 end
