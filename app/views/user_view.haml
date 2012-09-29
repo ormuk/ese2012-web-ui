@@ -1,9 +1,20 @@
-%h1 User #{user.name}
-
-%ul
+- if user.name != session[:name]
+  %h1 User #{user.name}
   - for item in user.list_items
-    %a{:href => "/item/#{item.id}"} #{item.name}
+    %p
+      %a{:href => "/item/#{item.id}"} #{item.name}
+      \- #{item.price} -
+      %a{:href => "/item/#{item.id}/buy"} Buy this item.
+-else
+  - for item in user.list_items
+    %p
+      %a{:href => "/item/#{item.id}"} #{item.name}
+      \- #{item.price} -
+      %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
 
 %hr
 
+%a{:href => "/user/#{session[:name]}"} My items
+%a{:href => "/item"} Buy items
+%a{:href => "/user"} Users
 %a{:href => "/logout"} Logout

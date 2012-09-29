@@ -9,6 +9,7 @@
   %p This item is not purchasable at the moment.
 
 %p
-  %a{:href => "/item"} Items
+  %a{:href => "/user/#{session[:name]}"} My items
+  %a{:href => "/item"} Buy items
   %a{:href => "/user"} Users
   %a{:href => "/logout"} Logout

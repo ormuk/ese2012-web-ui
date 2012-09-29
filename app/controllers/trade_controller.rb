@@ -17,6 +17,13 @@ class TradeController < Sinatra::Application
     haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i)}
   end
 
+  get "/item/:id/sell" do
+    if User.by_name(session[:name]) == Item.by_id(params[:id].to_i).owner
+      Item.by_id(params[:id].to_i).state == :active
+    end
+    redirect "/user/#{session[:name]}"
+  end
+
   get "/item/:id/buy" do
     if User.by_name(session[:name]) == Item.by_id(params[:id].to_i).owner
       "This is your own item!"
