@@ -29,7 +29,7 @@ class TradeController < Sinatra::Application
       "This is your own item!"
     else
       User.by_name(session[:name]).buy(Item.by_id(params[:id].to_i))
-      haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i)}
+      haml :item, :locals => {:users => User.all}
     end
   end
 end

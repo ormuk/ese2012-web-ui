@@ -10,7 +10,10 @@
     %p
       %a{:href => "/item/#{item.id}"} #{item.name}
       \- #{item.price} -
-      %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
+      - if item.state == :inactive
+        %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
+      -else
+        This item is purchasable by other users.
 
 %hr
 
