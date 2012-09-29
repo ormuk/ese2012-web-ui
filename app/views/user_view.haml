@@ -1,8 +1,9 @@
 %h1 User #{user.name}
-%a{:href => "/logout"} Logout
 
 %ul
   - for item in user.list_items
     %a{:href => "/#{item.name}"} #{item.name}
 
 %hr
+
+%a{:href => "/logout"} Logout

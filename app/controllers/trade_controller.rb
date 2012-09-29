@@ -1,6 +1,15 @@
+require_relative '../../app/models/trade/user'
 class TradeController < Sinatra::Application
   get "/" do
-    redirect '/login' unless session[:name]
+    if session[:name]
+      redirect '/buy'
+    else
+      redirect '/login'
+    end
+  end
+
+  get "/buy" do
+    haml :buy, :locals => {:users => User.all}
   end
 
   get "/item" do
