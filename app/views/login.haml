@@ -1,4 +1,6 @@
 %h4 Login
+-unless msg.nil?
+  #{msg}
 %form( action="/login" method="POST" )
   %p
     %label
