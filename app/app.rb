@@ -6,7 +6,6 @@ require 'controllers/trade_controller'
 require 'controllers/user_controller'
 require 'models/trade/user'
 require 'models/trade/item'
-
 class App < Sinatra::Base
 
   @@users = Array.new
@@ -29,6 +28,7 @@ class App < Sinatra::Base
     ese = User.new('ese')
     ese.add_item(Item.new('script',5))
     ese.add_item(Item.new('beamer', 650))
+    ese.items[0].state = :active
     ese.save
 
     suti = User.new('suti')
