@@ -1,4 +1,3 @@
-%link(rel="stylesheet" type="text/css" href="/style.css")
 %p Item #{item.name}
 %p
   Owner:
@@ -19,9 +18,3 @@
     %a{:href => "/item/#{item.id}/sell"} Put this item on the market.
   -else
     This item is purchasable by other users.
-%hr
-%p
-  %a{:href => "/user/#{session[:name]}"} My items
-  %a{:href => "/item"} Buy items
-  %a{:href => "/user"} Users
-  %a{:href => "/logout"} Logout

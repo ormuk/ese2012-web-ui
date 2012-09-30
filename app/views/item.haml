@@ -1,4 +1,3 @@
-%link(rel="stylesheet" type="text/css" href="/style.css")
 %h4 Purchasable items
 //check if the are available items for the current user to buy
 -if(Item.all.detect{ |item| item.state == :active and item.owner.name != session[:name]}.nil?)
@@ -18,8 +17,3 @@
               %a{:href => "/item/#{item.id}/buy"} Buy this item.
             -else
               You don't have enough credits to buy this item.
-%hr
-%p
-  %a{:href => "/user/#{session[:name]}"} My items
-  %a{:href => "/user"} Users
-  %a{:href => "/logout"} Logout

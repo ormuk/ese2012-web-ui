@@ -1,6 +1,8 @@
 require_relative '../../app/models/trade/user'
 class UserController < Sinatra::Application
 
+  attr_accessor :msg
+
  before do
   redirect to "/login" if session[:name].nil?
  end

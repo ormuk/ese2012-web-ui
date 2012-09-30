@@ -1,12 +1,5 @@
-%link(rel="stylesheet" type="text/css" href="/style.css")
 %h4 Users
 - for user in User.all
   %p
     %a{:href => "/user/#{user.name}"} #{user.name}
     \- #{user.active_items.length} available items.
-
-%hr
-%p
-  %a{:href => "/user/#{session[:name]}"} My items
-  %a{:href => "/item"} Buy items
-  %a{:href => "/logout"} Logout

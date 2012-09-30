@@ -2,16 +2,14 @@ require_relative '../../app/models/trade/user'
 require_relative '../../app/models/trade/item'
 class TradeController < Sinatra::Application
 
+  attr_accessor :msg
+
   before do
     redirect to "/login" if session[:name].nil?
   end
 
   get "/" do
-    if session[:name]
-      redirect '/item'
-    else
-      redirect '/login'
-    end
+    redirect '/item'
   end
 
   get "/item" do
