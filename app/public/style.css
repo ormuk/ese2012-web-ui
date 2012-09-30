@@ -1,0 +1,12 @@
+body
+{
+    font-size:120%;
+    font-family:"comic sans",Comic Sans MS,'cursive';
+    background-color: #a529ff;
+    color: #d9ff00;
+    margin:10px;
+}
+
+a:link {color: #b6e2b5;text-decoration:none;}
+a:visited {color: #1de200;text-decoration:none;}
+a:hover {color: #ff00e8;font-weight:bold;text-decoration:none;}
