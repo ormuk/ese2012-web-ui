@@ -7,6 +7,28 @@ body
     margin:10px;
 }
 
+#menu ul li {
+    display: block;
+    float: left;
+    padding: 10px;
+}
+
+#menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu {
+
+    height: 100px;
+}
+
+#wrapper {
+    width: 850px;
+    margin: 0px auto;
+
+}
+
 p {background-color: #ff6000}
 a:link {color: #b6e2b5;text-decoration:none;}
 a:visited {color: #1de200;text-decoration:none;}

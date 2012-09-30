@@ -2,18 +2,19 @@
   %title Flo & Suti's Marketplace
   %link(rel="stylesheet" type="text/css" href="/style.css")
 %body
-  #menu
-    %ul
-      %li
-        %a{:href => "/user/#{session[:name]}"} My items
-      %li
-        %a{:href => "/item"} Buy items
-      %li
-        %a{:href => "/user"} Users
-      %li
-        %a{:href => "/logout"} Logout
-  #content
-    #message
-      -unless msg.nil?
-        #{msg}
-    =yield
+  #wrapper
+    #menu
+      %ul
+        %li
+          %a{:href => "/user/#{session[:name]}"} My items
+        %li
+          %a{:href => "/item"} Buy items
+        %li
+          %a{:href => "/user"} Users
+        %li
+          %a{:href => "/logout"} Logout
+    #content
+      #message
+        -unless msg.nil?
+          #{msg}
+      =yield

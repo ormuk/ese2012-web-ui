@@ -2,8 +2,9 @@
   %title Flo & Suti's Marketplace
   %link(rel="stylesheet" type="text/css" href="/style.css")
 %body
-  #content
-    #message
-      -unless msg.nil?
-        #{msg}
-    =yield
+  #wrapper
+    #content
+      #message
+        -unless msg.nil?
+          #{msg}
+      =yield
