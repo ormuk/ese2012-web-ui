@@ -1,6 +1,11 @@
 require_relative '../../app/models/trade/user'
 require_relative '../../app/models/trade/item'
 class TradeController < Sinatra::Application
+
+  before do
+    redirect to "/login" if session[:name].nil?
+  end
+
   get "/" do
     if session[:name]
       redirect '/item'
@@ -18,15 +23,15 @@ class TradeController < Sinatra::Application
   end
 
   get "/item/:id/sell" do
-    if User.by_name(session[:name]) == Item.by_id(params[:id].to_i).owner
-      Item.by_id(params[:id].to_i).state == :active
+    if session[:name] == Item.by_id(params[:id].to_i).owner.name
+      Item.by_id(params[:id].to_i).state = :active
+      redirect "/user/#{session[:name]}"
     end
-    redirect "/user/#{session[:name]}"
   end
 
   get "/item/:id/buy" do
     if User.by_name(session[:name]) == Item.by_id(params[:id].to_i).owner
-      "This is your own item!"
+      redirect "/user/#{session[:name]}"
     else
       User.by_name(session[:name]).buy(Item.by_id(params[:id].to_i))
       haml :item, :locals => {:users => User.all}

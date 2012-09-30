@@ -1,5 +1,10 @@
 require_relative '../../app/models/trade/user'
 class UserController < Sinatra::Application
+
+ before do
+  redirect to "/login" if session[:name].nil?
+ end
+
  get "/user" do
    haml :users
  end

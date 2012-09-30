@@ -1,6 +1,7 @@
 require 'haml'
 require_relative '../../app/models/trade/user'
 class LoginController < Sinatra::Application
+
   post "/login" do
     #login duh!?
     user =  User.by_name params[:username]
@@ -20,6 +21,6 @@ class LoginController < Sinatra::Application
   get "/logout" do
     #destroy session
     session[:name] = nil
-    haml :logout
+    haml :login, :locals => {:msg => "You have successfully logged off!"}
   end
 end

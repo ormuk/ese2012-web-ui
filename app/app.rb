@@ -19,9 +19,7 @@ class App < Sinatra::Base
 
   #filter that redirects users to login if necessary
   before do
-    if session[:name].nil?
-        redirect to "/login"
-    end
+    redirect to "/login" if session[:name].nil?
   end
 
   configure :development do
@@ -42,7 +40,7 @@ class App < Sinatra::Base
     flo.add_item(Item.new('Tisch', 156))
     flo.save
 
-    Item.all.each{ |item| item.state = :active}
+    #Item.all.each{ |item| item.state = :active}
   end
 end
 
