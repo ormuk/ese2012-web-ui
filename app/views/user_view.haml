@@ -1,7 +1,6 @@
 %link(rel="stylesheet" type="text/css" href="/style.css")
 //switch between buying view and "my account" view
 - if user.name != session[:name]
-<<<<<<< HEAD
   %h4 User #{user.name}
   -if user.active_items.length == 0
     This user has no items on the market at the moment.
@@ -14,14 +13,6 @@
           %a{:href => "/item/#{item.id}/buy"} Buy this item.
         -else
           You don't have enough credits to buy this item.
-=======
-  %h1 User #{user.name}
-  - for item in user.active_items
-    %p
-      %a{:href => "/item/#{item.id}"} #{item.name}
-      \- #{item.price} credits -
-      %a{:href => "/item/#{item.id}/buy"} Buy this item.
->>>>>>> bugfix item list and user view
 -else
   %h4 My account
   My credits: #{user.credits}
