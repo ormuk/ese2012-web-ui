@@ -15,6 +15,7 @@ class TradeController < Sinatra::Application
   end
 
   get "/item" do
+    #@available_items = (Item.all.detect{ |item| item.state == :active and item.owner.name == session[:name]}.nil?)
     haml :item, :locals => {:users => User.all}
   end
 

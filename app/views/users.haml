@@ -5,6 +5,7 @@
     \- #{user.active_items.length} available items.
 
 %hr
-%a{:href => "/user/#{session[:name]}"} My items
-%a{:href => "/item"} Buy items
-%a{:href => "/logout"} Logout
+%p
+  %a{:href => "/user/#{session[:name]}"} My items
+  %a{:href => "/item"} Buy items
+  %a{:href => "/logout"} Logout

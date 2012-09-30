@@ -1,18 +1,24 @@
 %h4 Purchasable items
-
-- for user in users
-  -unless user.name == session[:name]
-    User
-    %a{:href => "/user/#{user.name}"} #{user.name}s
-    items:
-  %ul
-    - for item in user.active_items
-      -unless item.owner.name == session[:name]
+//check if the are available items for the current user to buy
+-if(Item.all.detect{ |item| item.state == :active and item.owner.name != session[:name]}.nil?)
+  There are no items on the market right now!
+-else
+  //lists items per user
+  - for user in users
+    -unless user.name == session[:name] or user.active_items.length == 0
+      User
+      %a{:href => "/user/#{user.name}"} #{user.name}'s
+      items:
+    %ul
+      - for item in user.active_items
         %p
           #{item.name} - #{item.price} credits -
-          %a{:href => "/item/#{item.id}/buy"} Buy this item
-
+          -if User.by_name(session[:name]).credits >= item.price
+            %a{:href => "/item/#{item.id}/buy"} Buy this item.
+          -else
+            You don't have enough credits to buy this item.
 %hr
-%a{:href => "/user/#{session[:name]}"} My items
-%a{:href => "/user"} Users
-%a{:href => "/logout"} Logout
+%p
+  %a{:href => "/user/#{session[:name]}"} My items
+  %a{:href => "/user"} Users
+  %a{:href => "/logout"} Logout
