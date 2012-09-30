@@ -7,12 +7,12 @@
   -else
     - for item in user.active_items
       %p
-      %a{:href => "/item/#{item.id}"} #{item.name}
-      \- #{item.price} credits -
-      -if User.by_name(session[:name]).credits >= item.price
-        %a{:href => "/item/#{item.id}/buy"} Buy this item.
-      -else
-        You don't have enough credits to buy this item.
+        %a{:href => "/item/#{item.id}"} #{item.name}
+        \- #{item.price} credits -
+        -if User.by_name(session[:name]).credits >= item.price
+          %a{:href => "/item/#{item.id}/buy"} Buy this item.
+        -else
+          You don't have enough credits to buy this item.
 -else
   %h4 My account
   My credits: #{user.credits}
