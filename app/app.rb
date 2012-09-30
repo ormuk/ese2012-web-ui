@@ -40,7 +40,7 @@ class App < Sinatra::Base
     flo.add_item(Item.new('Tisch', 156))
     flo.save
 
-    #Item.all.each{ |item| item.state = :active}
+    Item.all.each{ |item| item.state = :active}
   end
 end
 

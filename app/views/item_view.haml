@@ -1,5 +1,7 @@
 %p Item #{item.name}
-%p Owner: #{item.owner.name}
+%p
+  Owner:
+  %a{:href => "/user/#{item.owner.name}"} #{item.owner.name}
 %p Price: #{item.price} credits
 - if item.owner.name != session[:name]
   - if item.state == :active

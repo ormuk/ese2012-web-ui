@@ -9,14 +9,14 @@
       User
       %a{:href => "/user/#{user.name}"} #{user.name}'s
       items:
-    %ul
-      - for item in user.active_items
-        %p
-          #{item.name} - #{item.price} credits -
-          -if User.by_name(session[:name]).credits >= item.price
-            %a{:href => "/item/#{item.id}/buy"} Buy this item.
-          -else
-            You don't have enough credits to buy this item.
+      %ul
+        - for item in user.active_items
+          %p
+            #{item.name} - #{item.price} credits -
+            -if User.by_name(session[:name]).credits >= item.price
+              %a{:href => "/item/#{item.id}/buy"} Buy this item.
+            -else
+              You don't have enough credits to buy this item.
 %hr
 %p
   %a{:href => "/user/#{session[:name]}"} My items
