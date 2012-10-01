@@ -13,12 +13,6 @@ body
     padding: 10px;
 }
 
-#menu .logout {
-    display: block;
-    float: right;
-    padding: 10px;
-}
-
 #menu ul {
     margin: 0px;
     padding: 0px;
@@ -26,7 +20,7 @@ body
 
 #menu {
 
-    height: 50px;
+    height: 100px;
 }
 
 #wrapper {

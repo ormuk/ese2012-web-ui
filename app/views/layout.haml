@@ -12,11 +12,8 @@
         %li
           %a{:href => "/user"} Users
         %li
-          Credits: #{User.by_name(session[:name]).credits}
-        .logout
           %a{:href => "/logout"} Logout
     #content
-      %hr
       #message
         -unless msg.nil?
           #{msg}
