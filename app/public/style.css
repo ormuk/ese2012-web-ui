@@ -3,14 +3,13 @@ body
     font-size:120%;
     background-color: #D7D2B9;
     color: #5d5d5d;
-    margin:0px;
+    margin:10px;
 }
 
 #menu ul li {
     display: block;
     float: left;
     padding: 10px;
-    color: #FFFFFF;
 }
 
 #menu .logout {
@@ -25,7 +24,7 @@ body
 }
 
 #menu {
-    background-color: #5d5d5d;
+
     height: 50px;
 }
 
@@ -35,9 +34,6 @@ body
 
 }
 
-#content a:link {color: #9D9159;text-decoration:none;}
-#content a:visited {color: #9D9159;text-decoration:none;}
-#content a:hover {color: #9D9159;font-weight:bold;text-decoration:none;}
-#menu a:link {color: #D7D2B9;text-decoration:none;}
-#menu a:visited {color: #D7D2B9;text-decoration:none;}
-#menu a:hover {color: #D7D2B9;text-decoration:none;}
+a:link {color: #9D9159;text-decoration:none;}
+a:visited {color: #9D9159;text-decoration:none;}
+a:hover {color: #382A60;font-weight:bold;text-decoration:none;}
