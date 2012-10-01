@@ -5,8 +5,7 @@
   %body
     #wrapper
       #content
-        =yield
         #message
           -unless msg.nil?
-            .info
-              %p #{msg}
+            %p #{msg}
+        =yield
