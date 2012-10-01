@@ -14,13 +14,17 @@ body
 }
 
 #menu .logout {
+    color: #FFFFFF;
     display: block;
     float: right;
     padding: 10px;
 }
 
 #menu ul {
-    margin: 0px;
+    width: 850px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0px;
 }
 
@@ -30,9 +34,19 @@ body
 }
 
 #wrapper {
-    width: 850px;
     margin: 0px auto;
+}
 
+#content{
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #content a:link {color: #9D9159;text-decoration:none;}
