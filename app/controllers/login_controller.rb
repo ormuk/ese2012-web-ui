@@ -21,10 +21,9 @@ class LoginController < Sinatra::Application
   end
 
   get "/logout" do
-    unless session.nil?
-      self.msg = "You have successfully logged off."
-    end
+    #destroy session
     session.clear
+    self.msg = "You have successfully logged off."
     haml :'login/login', :layout => :'login/layout'
   end
 end
