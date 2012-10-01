@@ -8,7 +8,7 @@ class LoginController < Sinatra::Application
     #login duh!?
     user =  User.by_name params[:username]
     if user.nil? or user.name != params[:password]
-      self.msg =  "User or password incorrect!"
+      self.msg =  "User or password incorrect."
       haml :'login/login', :layout => :'login/layout'
     else
       session[:name] = user.name
@@ -23,7 +23,7 @@ class LoginController < Sinatra::Application
   get "/logout" do
     #destroy session
     session.clear
-    self.msg = "You have successfully logged off!"
+    self.msg = "You have successfully logged off."
     haml :'login/login', :layout => :'login/layout'
   end
 end
