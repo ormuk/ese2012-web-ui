@@ -1,10 +1,11 @@
-%head
-  %title Flo & Suti's Marketplace
-  %link(rel="stylesheet" type="text/css" href="/style.css")
-%body
-  #wrapper
-    #content
-      #message
-        -unless msg.nil?
-          %p #{msg}
-      =yield
+.login
+  %head
+    %title Flo & Suti's Marketplace
+    %link(rel="stylesheet" type="text/css" href="/style.css")
+  %body
+    #wrapper
+      #content
+        #message
+          -unless msg.nil?
+            %p #{msg}
+        =yield

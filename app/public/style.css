@@ -44,14 +44,12 @@ body
 }
 
 .login {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    text-align:center;
 }
 
 #content a:link {color: #9D9159;text-decoration:none;}
 #content a:visited {color: #9D9159;text-decoration:none;}
-#content a:hover {color: #9D9159;font-weight:bold;text-decoration:none;}
+#content a:hover {color: #9D9159;text-decoration:underline;}
 #menu a:link {color: #D7D2B9;text-decoration:none;}
 #menu a:visited {color: #D7D2B9;text-decoration:none;}
-#menu a:hover {color: #D7D2B9;text-decoration:none;}
+#menu a:hover {color: #D7D2B9;text-decoration:underline;}
