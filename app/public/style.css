@@ -2,8 +2,8 @@ body
 {
     font-size:120%;
     font-family:"comic sans",Comic Sans MS,'cursive';
-    background-color: #a529ff;
-    color: #d9ff00;
+    background-color: #D7D2B9;
+    color: #5d5d5d;
     margin:10px;
 }
 
@@ -29,7 +29,6 @@ body
 
 }
 
-p {background-color: #ff6000}
-a:link {color: #b6e2b5;text-decoration:none;}
-a:visited {color: #1de200;text-decoration:none;}
-a:hover {color: #ff00e8;font-weight:bold;text-decoration:none;}
+a:link {color: #9D9159;text-decoration:none;}
+a:visited {color: #9D9159;text-decoration:none;}
+a:hover {color: #D2B8D7;font-weight:bold;text-decoration:none;}
