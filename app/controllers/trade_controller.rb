@@ -14,11 +14,11 @@ class TradeController < Sinatra::Application
 
   get "/item" do
     #@available_items = (Item.all.detect{ |item| item.state == :active and item.owner.name == session[:name]}.nil?)
-    haml :item, :locals => {:users => User.all}
+    haml :item, :locals => {:users => User.all, :current_page => :item}
   end
 
   get "/item/:id" do
-    haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i), :user => User.by_name(params[:name])}
+    haml :item_view, :locals => {:item => Item.by_id(params[:id].to_i), :user => User.by_name(params[:name]), :current_page => :item_view}
   end
 
   get "/item/:id/sell" do
@@ -33,7 +33,7 @@ class TradeController < Sinatra::Application
       redirect "/user/#{session[:name]}"
     else
       User.by_name(session[:name]).buy(Item.by_id(params[:id].to_i))
-      haml :item, :locals => {:users => User.all}
+      redirect "/item"
     end
   end
 end

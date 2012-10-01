@@ -1,6 +1,6 @@
 //switch between buying view and "my account" view
 - if user.name != session[:name]
-  %h4 User #{user.name}
+  %p User #{user.name}
   -if user.active_items.length == 0
     This user has no items on the market at the moment.
   -else
@@ -13,8 +13,6 @@
         -else
           You don't have enough credits to buy this item.
 -else
-  %h4 My account
-  My credits: #{user.credits}
   - for item in user.items
     %p
       %a{:href => "/item/#{item.id}"} #{item.name}
