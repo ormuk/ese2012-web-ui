@@ -8,10 +8,10 @@ class UserController < Sinatra::Application
  end
 
  get "/user" do
-   haml :users, :locals => {:current_page => :user}
+   haml :users
  end
 
   get "/user/:name" do
-    haml :user_view, :locals => {:user => User.by_name(params[:name]), :current_page => :user_view}
+    haml :user_view, :locals => {:user => User.by_name(params[:name])}
   end
 end

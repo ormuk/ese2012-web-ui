@@ -6,24 +6,15 @@
     #menu
       %ul
         %li
-          -unless current_page == :user_view and user.name == session[:name]
-            %a{:href => "/user/#{session[:name]}"} My items
-          -else
-            My items
+          %a{:href => "/user/#{session[:name]}"} My items
         %li
-          -unless current_page == :item
-            %a{:href => "/item"}Buy items
-          -else
-            Buy items
+          %a{:href => "/item"} Buy items
         %li
-          -unless current_page == :user
-            %a{:href => "/user"} Users
-          -else
-            Users
+          %a{:href => "/user"} Users
+        %li
+          Credits: #{User.by_name(session[:name]).credits}
         .logout
           %a{:href => "/logout"} Logout
-        .logout
-          Credits: #{User.by_name(session[:name]).credits}
     #content
       #message
         -unless msg.nil?

@@ -1,5 +1,5 @@
+%h4 Users
 - for user in User.all
   %p
-    User
     %a{:href => "/user/#{user.name}"} #{user.name}
     \- #{user.active_items.length} available items.
