@@ -1,0 +1,3 @@
+1. Sinatra gets the request, checks for any get/post/etc. methods in the ruby controller files, the first method that matches the requested route is executed. 
+2. A user shouldn't be able to submit data twice so he doesn't make the same change to the system twice.
+3. As late as possible; in the haml views
