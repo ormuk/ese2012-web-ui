@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'sinatra'
 require 'require_relative'
-require 'controllers/login_controller'
-require 'controllers/trade_controller'
-require 'controllers/user_controller'
-require 'models/trade/user'
-require 'models/trade/item'
+require_relative 'controllers/login_controller'
+require_relative 'controllers/trade_controller'
+require_relative 'controllers/user_controller'
+require_relative 'models/trade/user'
+require_relative 'models/trade/item'
 class App < Sinatra::Base
 
   @@users = Array.new
